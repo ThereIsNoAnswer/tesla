@@ -47,7 +47,7 @@
   background: rgba(0, 0, 0, 0.08);
 }*/
 
-.header_nav_btn .menu_btn {
+.header_nav_btn.menu_btn {
   display: inline-block;
 }
 
