@@ -8,6 +8,8 @@
  *
  * Copyright (C) 2018 http://alvarotrigo.com/fullPage - A project by Alvaro Trigo
  */
+
+
 (function( root, window, document, factory, undefined) {
     if( typeof define === 'function' && define.amd ) {
         // AMD. Register as an anonymous module.
@@ -662,7 +664,6 @@
             }
 
             options.scrollBar = options.scrollBar || options.hybrid;
-
             setOptionsFromDOM();
             prepareDom();
             setAllowScrolling(true);
@@ -1873,18 +1874,20 @@
         /**
         * Performs the vertical movement (by CSS3 or by jQuery)
         */
+        
         function performMovement(v){
             var isFastSpeed = options.scrollingSpeed < 700;
             var transitionLapse = isFastSpeed ? 700 : options.scrollingSpeed; 
+            //마우스휠이벤트
+
 
             // using CSS3 translate functionality
             if (options.css3 && options.autoScrolling && !options.scrollBar) {
-
+                
                 // The first section can have a negative value in iOS 10. Not quite sure why: -0.0142822265625
                 // that's why we round it to 0.
                 var translate3d = 'translate3d(0px, -' + Math.round(v.dtop) + 'px, 0px)';
                 transformContainer(translate3d, true);
-
                 //even when the scrollingSpeed is 0 there's a little delay, which might cause the
                 //scrollingSpeed to change in case of using silentMoveTo();
                 if(options.scrollingSpeed){
@@ -1928,7 +1931,7 @@
                     }
                 });
             }
-
+            
             // enabling canScroll after the minimum transition laps
             if(isFastSpeed){
                 clearTimeout(g_transitionLapseId);
@@ -3051,6 +3054,7 @@
             $body.className = $body.className.replace(classRe, '');
 
             //adding the current anchor
+            //viewing 설정
             addClass($body, VIEWING_PREFIX + '-' + text);
         }
 
@@ -3390,6 +3394,7 @@
             removeClass($body, RESPONSIVE);
 
             // remove all of the .fp-viewing- classes
+            //viewing 설정
             $body.className.split(/\s+/).forEach(function (className) {
                 if (className.indexOf(VIEWING_PREFIX) === 0) {
                     removeClass($body, className);

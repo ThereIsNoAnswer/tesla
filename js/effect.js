@@ -1,3 +1,4 @@
+// console.log("wheel");
 var menu_btn = document.getElementsByClassName("menu_btn");
 menu_btn.item(0).addEventListener('click', menu_clicked);
 function menu_clicked() {
@@ -21,9 +22,9 @@ function menu_clicked() {
         // var fp_viewing = $('body').attr('class');
         // var fullpage_transform_matrix = $('#fullpage').css('transform');
         // var fullpage_transform_y = fullpage_transform_matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
-        var overlay=document.getElementById('blur_overlay').className
-        var overlayarr=overlay.split(' ');
-        console.log(overlayarr.length);
+        // var overlay=document.getElementById('blur_overlay').className
+        // var overlayarr=overlay.split(' ');
+        // console.log(overlayarr.length);
     })
 
 }
